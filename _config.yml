@@ -1,0 +1,27 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            oct0xor's blog
+
+url:              http://oct0xor.github.io
+paginate:         1
+baseurl:          /
+author:
+  name:           oct0xor
+  url:            https://twitter.com/oct0xor
+  email:          oct0xor@gmail.com
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/oct0xor/oct0xor.github.io
+
+# This is the list of pages to incldue in the header of the website.
+pages_list:       
+  Archive: '/archive/'
+  Feed: '/atom.xml'
