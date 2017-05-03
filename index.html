@@ -4,34 +4,31 @@ title: Home
 ---
 
 <div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+    {% for post in paginator.posts %}
+    <article class="post">
+        <header class="post_header">
+            <time class="post_detail post_date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+            <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        </header>
+        {{ post.content }}
+    </article>
+    {% endfor %}
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <footer class="post_footer">
+        <nav class="pagination">
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+                {% if paginator.previous_page %}
+                <li class="pagination_prev">
+                    <a class="prev" title="{{page.previous.title}}" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Previous page</a>
+                </li>
+                {% endif %}
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
+                {% if paginator.next_page %}
+                <li class="pagination_next">
+                    <a class="next" title="{{page.next.title}}" href="{{ paginator.next_page_path | prepend: site.baseurl }}" >Next page</a>
+                </li>
+                {% endif %}
+
+        </nav>
+    </footer>
 </div>

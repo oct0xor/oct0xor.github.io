@@ -1,28 +1,68 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>{{ page.title }} - {{ site.title }}</title>
 
-  {% include head.html %}
+   <link rel="stylesheet" type="text/css" href="{{ site.path }}/css/style.css" >
 
-  <body>
+</head>
+<body>
 
-    <div class="container content">
-      <div class="masthead">
-        <h3 class="masthead-title">
-          <a href="{{ site.baseurl }}" title="Home">{{ site.title }}</a>
-          {% for page in site.pages_list %}
-              &nbsp;&nbsp;&nbsp;<small><a href="{{ page[1]  }}">{{ page[0] }}</a></small>
-          {% endfor %}
-        </h3>
-      </div>
+		<div id="container">
 
-      {{ content }}
+		<div id="header">
 
-      <div class="footer">
-        <p>
-          &copy; {{ site.time | date: '%Y' }}. All rights reserved.
-        </p>
-      </div>
-    </div>
+				<nav style="">
+				    <ul class="main_menu">
+                        <li><a href="{{ site.baseurl }}/about">About</a></li>
+                    </ul>
 
-  </body>
+					<h1 id="logo"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+					<div id="logo-subline">{{ site.tagline }}</div>
+
+				</nav>
+
+		</div>
+
+			<div id="sidebar">
+
+                <nav>
+                    <h1>Posts</h1>
+                        <ul class="post_list">
+
+                            {% for post in site.posts %}
+                            <li>
+                                <h2>
+                                    <h7>
+                                    <time class="post_date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%y.%m.%d" }}</time>
+                                    </h7>
+
+                                    <div>
+                                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                                    </div>
+                                </h2>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+				</nav>
+
+			</div>
+
+			<div id="content_container">
+				<div id="content">
+
+                    {{ content }}
+
+				</div>
+
+				<footer id="page_footer">
+					<p>&copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.</p>
+				</footer>
+
+			</div>
+		</div>
+
+</body>
 </html>

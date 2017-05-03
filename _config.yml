@@ -1,27 +1,24 @@
-# Dependencies
-markdown:         redcarpet
-pygments:         true
-
 # Permalinks
-permalink:        pretty
+permalink:           pretty
 
 # Setup
-title:            oct0xor's blog
+title:               oct0xor's blog
+tagline:             
+paginate:            1
 
-url:              http://oct0xor.github.io
-paginate:         1
-baseurl:          /
-author:
-  name:           oct0xor
-  url:            https://twitter.com/oct0xor
-  email:          oct0xor@gmail.com
+# Handling Reading
 
-# Custom vars
-version:          1.0.0
-github:
-  repo:           https://github.com/oct0xor/oct0xor.github.io
+sass:
+  sass_dir: css
+  style:    expanded
 
-# This is the list of pages to incldue in the header of the website.
-pages_list:       
-  Archive: '/archive/'
-  Feed: '/atom.xml'
+exclude:
+- README.md
+
+# Conversion
+markdown: kramdown
+lsi: false
+
+# Gems
+gems:
+  - jekyll-paginate
