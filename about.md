@@ -1,9 +1,7 @@
 ---
 layout: page
-title: 
+title: Hi!
 ---
-
-# Hi,
 
 <div align="center">
     <img src ="/assets/workspace.png"/>
