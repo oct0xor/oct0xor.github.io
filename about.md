@@ -5,7 +5,7 @@ title: Hi!
 
 [Email](mailto:oct0xor@gmail.com) [Twitter](https://twitter.com/oct0xor) [GitHub](https://github.com/oct0xor)
 
-**Reverse engineering** / **Vulnerability research** / **Video games**
+Security researcher interested in **Reverse engineering** / **Vulnerability research** / **Video games**
 
 Currently hunting for in the wild 0-days at Kaspersky GReAT
 
@@ -46,6 +46,6 @@ Previously presented at: Virus Bulletin, CanSecWest, SAS, BlueHat, TyphoonCon, I
 - 2018 - [Exploiting ActionScript3 interpreter](https://github.com/oct0xor/presentations/blob/master/2018-01-Exploiting%20ActionScript3%20interpreter.pdf)
 
 ## Videos:
-- 2022 - [Metal Gear Solid 2 - The Substance Of Subsistence (S.O.S.) (Unofficial Project) Release Date Trailer](https://www.youtube.com/watch?v=pPsGTdWGZLc)
+- 2022 - [Metal Gear Solid 2 - The Substance Of Subsistence (S.O.S.) Release Date Trailer](https://www.youtube.com/watch?v=pPsGTdWGZLc)
 - 2022 - [Metal Gear Solid 2 - Third Person Camera Mod (Dev Diary)](https://www.youtube.com/watch?v=AGGNfOq8u3o)
 - 2021 - [GReAT Ideas. Powered by SAS: Exploit Analysis for Beginners (Workshop recording)](https://www.youtube.com/watch?v=m1bwW5_MSY4)
