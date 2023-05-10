@@ -5,14 +5,13 @@ title: Hi!
 
 [Email](mailto:oct0xor@gmail.com) [Twitter](https://twitter.com/oct0xor) [GitHub](https://github.com/oct0xor)
 
-Reverse engineering / Vulnerability research / Video games
+**Reverse engineering** / **Vulnerability research** / **Video games**
 
 Currently hunting for in the wild 0-days at Kaspersky GReAT
 
-Although all views and research in this blog are my own and do not represent my employer
+All views and research in this blog are my own and do not represent my employer
 
-Previously presented at:
-- Virus Bulletin, CanSecWest, SAS, BlueHat, TyphoonCon, ISC, AVAR, Code Blue, CCC, OffensiveCon, ...
+Previously presented at: Virus Bulletin, CanSecWest, SAS, BlueHat, TyphoonCon, ISC, AVAR, Code Blue, CCC, OffensiveCon, ...
 
 ## Securelist articles:
 - 2023 - [Nokoyawa ransomware attacks with Windows zero-day](https://securelist.com/nokoyawa-ransomware-attacks-with-windows-zero-day/109483/)
