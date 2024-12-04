@@ -3,12 +3,12 @@ layout: page
 title: PS4 Registry Editor
 ---
 
-Recently I reverse-engineered PS4 registry format and made a simple tool to view and edit it. 
+I recently reverse engineered the PS4 registry file format and created a simple tool to view and edit it.
 
-**Sony likes to encrypt and obfuscate everything.**
-**Every time it is very fun to figure it out.**
+**Sony loves to encrypt and obfuscate everything.**
+**It's always very fun to solve this.**
 
-PS4 registry is represented by a few different files and file formats:
+The PS4 registry is represented by several different files and file formats:
 
  - /system_data/settings/system.nvs
  - /system_data/settings/system.dat
@@ -16,47 +16,45 @@ PS4 registry is represented by a few different files and file formats:
  - /user/settings/system.eap
  - /system_data/settings/system.rec
 
-The most important are system.dat and system.idx. The file format is simple: system.idx contains info about every entry with offset and system.dat contains entries data.
+The most important are system.dat and system.idx. The file format is simple: system.idx contains information about each entry with an offset, and system.dat contains the entry data.
 
 <div align="center">
     <img src ="/assets/ps4_reg_1.png"/>
 </div>
 
-Entries inside system.eap and system.rec are stored in obfuscated format.
+Entries inside system.eap and system.rec are stored in an obfuscated format.
 
 <div align="center">
     <img src ="/assets/ps4_reg_2.png"/>
 </div>
 
-First of all, its XOR'ed with 8 bytes, there are a lot of Null bytes, so it's easy to figure out them without reversing. But thats not all.
-RegID's are encrypted, entries and data are hashed. Besides that, RegID's for system.eap and system.rec are encrypted with different keys.
+First, it is XORed with 8 bytes. There are a lot of zero bytes, so the XOR key is easy to extract without reversing. But that's not all.
+RegID's are encrypted, entries and data are hashed. In addition, RegID's for system.eap and system.rec are encrypted with different keys.
 
 <div align="center">
     <img src ="/assets/ps4_reg_3.png"/>
 </div>
 
-Why to obfuscate? Dunno.
+Why to obfuscate? I don't know. Folders containing these files should not be easily accessible.
 
-Folders with those files should be not easily accessible.
-
-My suggestions:
- - To prevent fuzzing of file format
- - Implement new crypto and hash algorithms is the most fun thing to do at work
+My guesses:
+ - To prevent fuzzing of the file format
+ - Implementing new encryption and hashing algorithms is the most fun thing to do at work
  - This data is very sensitive
 
-It becomes even more fun when you find a backdoor that grants access to registry for non-system processes.
-For it to work RegID's should be encrypted in another fashion.
+It gets even more fun when you find a backdoor that provides registry access to non-system processes.
+For this to work, RegID's must be encrypted in a different way.
 
 <div align="center">
     <img src ="/assets/ps4_reg_4.png"/>
 </div>
 
-My tool allows to work with system.dat, system.idx, system.eap and system.rec.
-System.nvs is not supported because its stored in kernel like view and therefore parsing will very depend on a system version. However, it contains the same entries as in system.rec.
+My tool allows you to work with system.dat, system.idx, system.eap and system.rec files.
+System.nv is not supported because it is stored in a kernel-like representation and therefore its parsing will be highly dependent on the system version. However, it contains the same entries as system.rec.
 
-It does not support rebuilding, so it is not possible to add new entries yet. 
+It does not support rebuilding, so adding new entries is not yet possible.
 
-As of 5.01 system.rec seems to contain additional layer of encryption, it's not implemented yet.
+As of version 5.01, system.rec appears to contain an additional layer of encryption, but it has not been implemented yet.
 
 <div align="center">
     <img src ="/assets/ps4_reg_5.png"/>
