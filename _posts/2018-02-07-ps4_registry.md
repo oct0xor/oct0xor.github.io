@@ -3,7 +3,7 @@ layout: page
 title: PS4 Registry Editor
 ---
 
-I recently reverse engineered the PS4 registry file format and created a simple tool to view and edit it.
+I recently reverse engineered the PS4 registry format and created a simple tool to view and edit it.
 
 **Sony loves to encrypt and obfuscate everything.**
 **It's always very fun to solve this.**
